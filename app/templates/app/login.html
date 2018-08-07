@@ -1,0 +1,55 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <meta name="author" content="farakhov kamil" />
+    <link rel="shortcut icon" href="{% static 'app/favicon.ico' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/login.css' %}" />
+</head>
+<body>
+    <svg class="hidden">
+        <symbol id="icon-arrow" viewBox="0 0 24 24">
+			<title>arrow</title>
+			<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+		</symbol>
+    </svg>
+    <main>
+        <div class="content content--side">
+			<header class="codrops-header">
+				<div class="codrops-links">
+					<a class="codrops-icon codrops-icon--prev" href="/" title="Previous Demo"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
+				</div>
+				<h1 class="codrops-header__title">Welcom to Emra Qazaqstan</h1>
+			</header>
+			<form class="form" action="" method="">
+				<div class="form__item">
+					<label class="form__label" for="email">Full Name</label>
+					<input class="form__input" type="text" name="name" id="name">
+				</div>
+				<div class="form__item">
+					<label class="form__label" for="email">Email Address</label>
+					<input class="form__input" type="email" name="email" id="email">
+				</div>
+				<div class="form__item">
+					<label class="form__label" for="password">Password</label>
+					<input class="form__input" type="password" name="password" id="password">
+				</div>
+				<div class="form__item form__item--actions">
+					<span>Already have an account? <a class="form__link" href="#">Login here</a></span>
+					<input class="form__button" type="button" name="signup" value="Signup">
+				</div>
+			</form>
+		</div>
+        <div class="content content--side">
+            {% static 'app/img/1.jpg' as img1url %}
+			<div class="poster" style="background-image:url({{ img1url }})"></div>
+			<div class="canvas-wrap">
+				<canvas></canvas>
+			</div>
+		</div>
+    </main>
+</body>
+</html>
