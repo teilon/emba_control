@@ -375,3 +375,13 @@ canvas {
 		height: 100vw;
 	}
 }
+
+.form__tile {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	align-items: center;
+}
+
+.tile {
+
+}

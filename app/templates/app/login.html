@@ -24,24 +24,41 @@
 				</div>
 				<h1 class="codrops-header__title">Welcom to Emra Qazaqstan</h1>
 			</header>
-			<form class="form" action="" method="">
-				<div class="form__item">
-					<label class="form__label" for="name">Full Name</label>
-					<input class="form__input" type="text" name="name" id="name">
-				</div>
-				<div class="form__item">
-					<label class="form__label" for="email">Email Address</label>
-					<input class="form__input" type="email" name="email" id="email">
-				</div>
-				<div class="form__item">
-					<label class="form__label" for="password">Password</label>
-					<input class="form__input" type="password" name="password" id="password">
-				</div>
+			<form class="form" method="POST">
+				{% csrf_token %}
+
+				{% for field in form %}
+					<div class="form__item">
+						<label class="form__label" for="{{ field.name }}">{{ field.label }}</label>
+						{{ field }}
+					</div>
+				{% endfor %}
 				<div class="form__item form__item--actions">
 					<span>Already have an account? <a class="form__link" href="#">Login here</a></span>
-					<input class="form__button" type="button" name="signup" value="Signup">
+					<input class="form__button" type="submit" name="signup" value="Signup">
 				</div>
+				<!--<button type="submit" class="save btn btn-default">Save</button>-->
 			</form>
+			<!--<form class="form" action="" method="">-->
+				<!--<div class="form__item">-->
+					<!--<label class="form__label" for="name">Full Name</label>-->
+					<!--<input class="form__input" type="text" name="name" id="name">-->
+				<!--</div>-->
+				<!--<div class="form__item">-->
+					<!--<label class="form__label" for="email">Email Address</label>-->
+					<!--<input class="form__input" type="email" name="email" id="email">-->
+				<!--</div>-->
+				<!--<div class="form__item">-->
+					<!--<label class="form__label" for="password">Password</label>-->
+					<!--<input class="form__input" type="password" name="password" id="password">-->
+				<!--</div>-->
+				<!--<div class="form__item form__item&#45;&#45;actions">-->
+					<!--<span>Already have an account? <a class="form__link" href="#">Login here</a></span>-->
+					<!--<input class="form__button" type="button" name="signup" value="Signup">-->
+					<!--<span>Just push "Enter" </span>-->
+					<!--<input class="form__button" type="button" name="enter" value="Enter">-->
+				<!--</div>-->
+			<!--</form>-->
 		</div>
         <div class="content content--side">
             {% static 'app/img/1.jpg' as img1url %}

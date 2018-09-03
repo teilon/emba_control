@@ -176,13 +176,16 @@
 							<span class="details__size">L</span>
 							<span class="details__size details__size--selected">M</span>
 							<span class="details__size">S</span>
+							<a href="{% url 'product' %}">
+								<svg class="icon icon--cart"><use xlink:href="#icon-cart"></use></svg>
+							</a>
 						</div>
 					</div>
 					<div class="details__item details__item--addtocart" data-direction="ttb">
 						<div class="details__inner">
-							<button class="action action--addtocart">
+							<a href="{% url 'login' %}">
 								<svg class="icon icon--cart"><use xlink:href="#icon-cart"></use></svg>
-							</button>
+							</a>
 						</div>
 					</div>
 					<div class="details__item details__item-colors" data-direction="ttb">

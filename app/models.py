@@ -25,13 +25,13 @@ class ProductSet(models.Model):
     w10 = models.IntegerField(default=0)
 
     # shelf
-    ms = models.IntegerField(default=0)
-    ws = models.IntegerField(default=0)
-    ds = models.IntegerField(default=0)
+    sm = models.IntegerField(default=0)
+    sw = models.IntegerField(default=0)
+    sd = models.IntegerField(default=0)
 
     # tample
-    mt = models.IntegerField(default=0)
-    wt = models.IntegerField(default=0)
+    tm = models.IntegerField(default=0)
+    tw = models.IntegerField(default=0)
 
 
 class EventStatusSet(models.Model):
@@ -79,7 +79,7 @@ class Partner(models.Model):
 
 class Request(models.Model):
     product_id = models.ForeignKey(ProductSet, on_delete=models.CASCADE)
-    partner_id = models.ForeignKey(Partner, on_delete=models.CASCADE)
+    # partner_id = models.ForeignKey(Partner, on_delete=models.CASCADE)
     status_id = models.ForeignKey(EventStatusSet, on_delete=models.CASCADE)
     description = models.CharField(max_length=200)
 
@@ -92,6 +92,17 @@ class Transaction(models.Model):
 class Storage(models.Model):
     product_id = models.ForeignKey(ProductSet, on_delete=models.CASCADE)
     transaction_id = models.ForeignKey(Transaction, on_delete=models.CASCADE)
+    creation_date = models.DateTimeField()
+
+
+# class Group(models.Model):
+#     name = models.CharField(max_length=50)
+#
+#
+# class User(models.Model):
+#     name = models.CharField(max_length=50)
+#     password = models.CharField(max_length=50)
+#     group_id = models.ForeignKey(Group, on_delete=models.CASCADE)
 
 
 # class Traider(models.Model):
